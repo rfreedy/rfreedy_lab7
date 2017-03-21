@@ -115,7 +115,7 @@ public class DetailActivity extends Activity {
                             inputStream = getContentResolver().openInputStream(imageUri);
 
                             Bitmap image = BitmapFactory.decodeStream(inputStream);
-                            ImageView imgView = (ImageView) findViewById(R.id.cameraPic);
+                            ImageView imgView = (ImageView) findViewById(R.id.picTaken);
                             imgView.setImageBitmap(image);
 
                         } catch (FileNotFoundException e) {

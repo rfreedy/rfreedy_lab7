@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:text="Saturday, February 11, 6:00pm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/gameTime" />
 
     <TextView
-        android:text="Purcell Pavilion at the Joyce Center, Notre Dame, Indiana"
+        android:id="@+id/gameTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/gameLocation" />
+        android:text="Saturday, February 11, 6:00pm"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+
+    <TextView
+        android:id="@+id/gameLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Purcell Pavilion at the Joyce Center, Notre Dame, Indiana"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -26,7 +28,7 @@
 
         <ImageView
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/florida_state"
+            app:srcCompat="@drawable/notredamelogo"
             android:id="@+id/opposingLogo"
             android:layout_marginRight="@dimen/logo_margin"
             android:layout_width="@dimen/detail_logo" />
@@ -138,15 +140,16 @@
             android:layout_marginEnd="@dimen/button_margin"
             android:layout_marginTop="@dimen/logo_size"
             android:id="@+id/cameraButton" />
+
         <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/notredamelogo"
-            android:id="@+id/cameraPic"
-            android:layout_marginLeft="@dimen/camera_margin"
-            android:layout_weight="1"
-            android:layout_width="@dimen/detail_logo"
+            app:srcCompat="@drawable/acc"
+            android:layout_marginEnd="31dp"
+            android:id="@+id/picTaken"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
+            android:layout_toStartOf="@+id/cameraButton"
+            android:layout_marginTop="28dp" />
     </RelativeLayout>
 
 
