@@ -8,15 +8,18 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class MyCsvFileReader {
+/**
+ * Created by User on 3/3/2017.
+ */
 
+public class MyCsvFileReader {
     Context context;
     public MyCsvFileReader(Context applicationContext) {
         this.context = applicationContext;
     }
 
-    public ArrayList<String[]> readCsvFile(int fileresource) {
-        ArrayList<String[]> games = new ArrayList<>();
+    public ArrayList<Team> readCsvFile(int fileresource) {
+        ArrayList<Team> games = new ArrayList<Team>();
         InputStream fin = null;
         InputStreamReader isr = null;
         BufferedReader reader = null;
@@ -26,8 +29,8 @@ public class MyCsvFileReader {
             reader = new BufferedReader(isr);
             String line = "";
             while ((line = reader.readLine()) != null) {
-                String[] teamInfo = line.split(",");
-                games.add(teamInfo);
+                String[] teamInfo = line.split(";");
+                games.add(new Team(teamInfo));
             }
         } catch (IOException e) {
             e.printStackTrace();

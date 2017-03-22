@@ -17,21 +17,23 @@ public class Team implements Serializable {
     String nd_record;
     String nd_logo;
     String camera;
+    String date;
 
-    public Team (String gameDate, String gameLocation, String opponentLogo, String gameOpponent, String opponentMascot, String opponentRecord, String gameScore, String gameResult, String ndName, String ndMascot, String ndRecord, String ndLogo, String gameCamera) {
-        setGameDate(gameDate);
-        setGameLocation(gameLocation);
-        setOpponentLogo(opponentLogo);
-        setGameOpponent(gameOpponent);
-        setOpponentMascot(opponentMascot);
-        setOpponentRecord(opponentRecord);
-        setGameScore(gameScore);
-        setGameResult(gameResult);
-        setNDName(ndName);
-        setNDLogo(ndLogo);
-        setNDMascot(ndMascot);
-        setNDRecord(ndRecord);
-        setGameCamera(gameCamera);
+    public Team (String [] info) {
+        setGameDate(info[0]);
+        setGameLocation(info[1]);
+        setOpponentLogo(info[2]);
+        setGameOpponent(info[3]);
+        setOpponentMascot(info[4]);
+        setOpponentRecord(info[5]);
+        setGameScore(info[6]);
+        setGameResult(info[7]);
+        setNDName(info[8]);
+        setNDLogo(info[11]);
+        setNDMascot(info[9]);
+        setNDRecord(info[10]);
+        setGameCamera(info[12]);
+        setDate(info[13]);
     }
 
     public void setGameDate(String a) {
@@ -136,6 +138,14 @@ public class Team implements Serializable {
 
     public String getGameCamera() {
         return this.camera;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getDate() {
+        return this.date;
     }
 
 }
