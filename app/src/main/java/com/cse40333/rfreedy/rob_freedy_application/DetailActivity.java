@@ -13,6 +13,8 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -157,5 +159,27 @@ public class DetailActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_detail, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int res_id = item.getItemId();
+
+        if (res_id == R.id.share) {
+            //code for sharing the schedule
+            Intent shareIntent = new Intent();
+            shareIntent.setAction(android.content.Intent.ACTION_SEND);
+            shareIntent.setType("plain/text");
+            shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "BasketBall Matches");
+            //shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, gameSchedule());
+            startActivity(android.content.Intent.createChooser(shareIntent, "Share via"));
+        }
+        return true;
     }
 }

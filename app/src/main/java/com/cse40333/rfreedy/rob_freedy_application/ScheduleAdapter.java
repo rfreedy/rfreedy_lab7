@@ -33,7 +33,7 @@ class ScheduleAdapter extends ArrayAdapter<Team> {
         LayoutInflater scheduleInflater = LayoutInflater.from(getContext());
         View scheduleView = scheduleInflater.inflate(R.layout.schedule_item, parent, false);
 
-        Team matchItem        = getItem(position);
+        Team matchItem = getItem(position);
 
         ImageView teamLogo = (ImageView) scheduleView.findViewById(R.id.teamPic);
         String mDrawableName = matchItem.getOpponentLogo();
